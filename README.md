@@ -1,6 +1,13 @@
-# Sistema Domótico Inteligente
+# Sistema domótico IoT con ESP32 · Grupo 3
 
-Proyecto de diseño e implementación de un sistema de domótica para el control automático, monitoreo y seguridad de una vivienda, desarrollado para la asignatura **Arquitectura de Computadoras (ACO941)** de la **Universidad Don Bosco (El Salvador)**.
+Universidad Don Bosco · ACO941 Arquitectura de Computadoras · Ciclo 02-2026
+Docente: Mg. Denis Altuve Santamaria
+
+> Estado: en desarrollo (Etapa 4). Este README se completa el 27 de noviembre con capturas, porcentaje logrado y créditos.
+
+## Qué es
+Sistema de domótica para una vivienda: iluminación, climatización y seguridad con control de acceso, controlado por un ESP32
+(simulado en Wokwi) que se comunica por MQTT con un servidor Linux propio, donde corre el dashboard de monitoreo y control.
 
 ## Base del Desarrollo
 
@@ -24,6 +31,35 @@ El sistema se divide en dos capas principales comunicadas mediante **MQTT** sobr
 3. **Seguridad y Control de Acceso (Subproceso C):** Monitoreo de puertas/ventanas (MC-38), vibración (SW-420) y movimiento (PIR), junto con autenticación por RFID (RC522) o teclado matricial para accionar cerradura solenoide y sirena/buzzer.
 
 ---
+
+## Arquitectura
+ESP32 (Wokwi) → broker público → **puente Mosquitto** → servidor virtual Linux (Fase 3): Mosquitto, Node-RED + Dashboard 2.0,
+MongoDB, PostgreSQL, Grafana, bind9 (`domotica.local`) → navegador o celular del usuario.
+
+Diagramas de bloques y de flujo: `docs/diagramas/`.
+
+## Fases del proyecto
+| Fase | Contenido | Documento |
+|---|---|---|
+| 1 | Presupuesto de la infraestructura | `docs/fase1/` |
+| 2 | Diseño conceptual del sistema domótico | `docs/fase2/` |
+| 3 | Implementación del servidor virtual | `docs/fase3/` |
+| 4 | Implementación y despliegue del sistema | `docs/fase4/` |
+
+## Cómo ejecutarlo
+1. Servidor: ver `server/` y ejecutar `scripts/verificar_servicios.sh` en la VM.
+2. Firmware: copiar `config.example.h` como `config.h`, abrir el proyecto de `simulacion/wokwi/` y correr la simulación.
+3. Dashboard: `http://domotica.local` desde un equipo de la misma red.
+
+## Para el equipo
+- Reglas de trabajo y para asistentes de IA: [`AGENTS.md`](AGENTS.md)
+- Requisitos y criterios de aceptación: [`docs/REQUISITOS.md`](docs/REQUISITOS.md)
+- Plan y responsables: [`docs/PLAN.md`](docs/PLAN.md)
+- Flujo de Git paso a paso: [`CONTRIBUTING.md`](CONTRIBUTING.md)
+
+## Porcentaje logrado
+_Se completa con la tabla de requisitos al final de las pruebas._
+
 
 ## Equipo de Proyecto — Grupo 3
 
