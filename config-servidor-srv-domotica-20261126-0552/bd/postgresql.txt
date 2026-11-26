@@ -1,0 +1,30 @@
+
+$ sudo -u postgres psql -c \l
+                                                       List of databases
+   Name    |  Owner   | Encoding | Locale Provider |   Collate   |    Ctype    | ICU Locale | ICU Rules |   Access privileges   
+-----------+----------+----------+-----------------+-------------+-------------+------------+-----------+-----------------------
+ domotica  | postgres | UTF8     | libc            | en_US.UTF-8 | en_US.UTF-8 |            |           | =Tc/postgres         +
+           |          |          |                 |             |             |            |           | postgres=CTc/postgres+
+           |          |          |                 |             |             |            |           | noderd=CTc/postgres
+ postgres  | postgres | UTF8     | libc            | en_US.UTF-8 | en_US.UTF-8 |            |           | 
+ template0 | postgres | UTF8     | libc            | en_US.UTF-8 | en_US.UTF-8 |            |           | =c/postgres          +
+           |          |          |                 |             |             |            |           | postgres=CTc/postgres
+ template1 | postgres | UTF8     | libc            | en_US.UTF-8 | en_US.UTF-8 |            |           | =c/postgres          +
+           |          |          |                 |             |             |            |           | postgres=CTc/postgres
+(4 rows)
+
+
+$ sudo -u postgres psql -d domotica -c \dt+
+                                     List of relations
+ Schema |   Name   | Type  |  Owner   | Persistence | Access method |  Size   | Description 
+--------+----------+-------+----------+-------------+---------------+---------+-------------
+ public | usuarios | table | postgres | permanent   | heap          | 0 bytes | 
+(1 row)
+
+
+$ sudo -u postgres psql -d domotica -c select relname as tabla, n_live_tup as filas from pg_stat_user_tables order by 1
+  tabla   | filas 
+----------+-------
+ usuarios |     0
+(1 row)
+

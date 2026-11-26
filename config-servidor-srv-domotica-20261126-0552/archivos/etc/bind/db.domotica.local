@@ -1,0 +1,14 @@
+$TTL    604800
+@       IN      SOA     srv.domotica.local. admin.domotica.local. (
+                     2026112301         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+@       IN      NS      srv.domotica.local.
+@       IN      A       192.168.31.49
+srv     IN      A       192.168.31.49
+dashboard IN    A       192.168.31.49
+grafana IN      A       192.168.31.49
+mqtt    IN      A       192.168.31.49

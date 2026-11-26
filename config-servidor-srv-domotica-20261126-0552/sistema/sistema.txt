@@ -1,0 +1,134 @@
+
+$ hostnamectl
+ Static hostname: srv-domotica
+       Icon name: computer-vm
+         Chassis: vm 🖴
+      Machine ID: 0037a03b636a4b9c81a84c8bb28269dd
+         Boot ID: a2855cb895d9431b84346f393b136580
+  Virtualization: oracle
+Operating System: Ubuntu 24.04.5 LTS
+          Kernel: Linux 6.8.0-149-generic
+    Architecture: x86-64
+ Hardware Vendor: innotek GmbH
+  Hardware Model: VirtualBox
+Firmware Version: VirtualBox
+   Firmware Date: Fri 2006-12-01
+    Firmware Age: 19y 11month 3w 4d
+
+$ uname -a
+Linux srv-domotica 6.8.0-149-generic #149-Ubuntu SMP PREEMPT_DYNAMIC Fri Oct 23 13:21:10 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+
+$ nproc
+2
+
+$ free -h
+               total        used        free      shared  buff/cache   available
+Mem:           7.8Gi       898Mi       5.5Gi        25Mi       1.6Gi       6.9Gi
+Swap:          4.0Gi          0B       4.0Gi
+
+$ lsblk -o NAME,SIZE,TYPE,FSTYPE,MOUNTPOINT
+NAME    SIZE TYPE FSTYPE MOUNTPOINT
+sda     500G disk        
+├─sda1    1M part        
+├─sda2  200G part ext4   /
+└─sda3  300G part ext4   /var
+sdb     250G disk        
+├─sdb1  150G part ext4   /datos
+└─sdb2  100G part ext4   /backup
+sr0    1024M rom         
+
+$ df -hT -x tmpfs
+Filesystem     Type  Size  Used Avail Use% Mounted on
+/dev/sda2      ext4  196G  9.9G  176G   6% /
+/dev/sdb2      ext4   98G   24K   93G   1% /backup
+/dev/sdb1      ext4  147G   28K  140G   1% /datos
+/dev/sda3      ext4  295G  1.4G  278G   1% /var
+
+$ cat /etc/fstab
+# /etc/fstab: static file system information.
+#
+# Use 'blkid' to print the universally unique identifier for a
+# device; this may be used with UUID= as a more robust way to name devices
+# that works even if disks are added and removed. See fstab(5).
+#
+# <file system> <mount point>   <type>  <options>       <dump>  <pass>
+# / was on /dev/sda2 during curtin installation
+/dev/disk/by-uuid/cd940cdc-9e3c-4b49-b80a-5a0b3c48a6db / ext4 defaults 0 1
+# /var was on /dev/sda3 during curtin installation
+/dev/disk/by-uuid/d44aa2bc-0cb8-4a9a-bfda-f388548e005a /var ext4 defaults 0 1
+# /datos was on /dev/sdb1 during curtin installation
+/dev/disk/by-uuid/3668dad3-c766-426c-aa0b-fbcb81b07fa0 /datos ext4 defaults 0 1
+# /backup was on /dev/sdb2 during curtin installation
+/dev/disk/by-uuid/11899d7d-727a-4021-af7e-924133c94f32 /backup ext4 defaults 0 1
+/swap.img	none	swap	sw	0	0
+
+$ ip -br address
+lo               UNKNOWN        127.0.0.1/8 ::1/128 
+enp0s3           UP             192.168.31.49/24 fe80::a00:27ff:fe8c:2daa/64 
+tailscale0       UNKNOWN        100.101.83.109/32 fd7a:115c:a1e0::8137:536e/128 fe80::814d:e90f:9dd1:79fe/64 
+
+$ ip route
+default via 192.168.31.1 dev enp0s3 proto static 
+192.168.31.0/24 dev enp0s3 proto kernel scope link src 192.168.31.49 
+
+$ resolvectl status
+Global
+         Protocols: -LLMNR -mDNS -DNSOverTLS DNSSEC=no/unsupported
+  resolv.conf mode: stub
+       DNS Servers: 127.0.0.1
+
+Link 2 (enp0s3)
+    Current Scopes: DNS
+         Protocols: +DefaultRoute -LLMNR -mDNS -DNSOverTLS DNSSEC=no/unsupported
+Current DNS Server: 8.8.8.8
+       DNS Servers: 127.0.0.1 8.8.8.8 fe80::5288:11ff:fea8:def2
+
+Link 3 (tailscale0)
+    Current Scopes: DNS
+         Protocols: -DefaultRoute -LLMNR -mDNS -DNSOverTLS DNSSEC=no/unsupported
+Current DNS Server: 100.100.100.100
+       DNS Servers: 100.100.100.100 fd7a:115c:a1e0::53
+        DNS Domain: tail8ec581.ts.net ~0.e.1.a.c.5.1.1.a.7.d.f.ip6.arpa
+                    ~100.100.in-addr.arpa ~101.100.in-addr.arpa
+                    ~102.100.in-addr.arpa ~103.100.in-addr.arpa
+                    ~104.100.in-addr.arpa ~105.100.in-addr.arpa
+                    ~106.100.in-addr.arpa ~107.100.in-addr.arpa
+                    ~108.100.in-addr.arpa ~109.100.in-addr.arpa
+                    ~110.100.in-addr.arpa ~111.100.in-addr.arpa
+                    ~112.100.in-addr.arpa ~113.100.in-addr.arpa
+                    ~114.100.in-addr.arpa ~115.100.in-addr.arpa
+                    ~116.100.in-addr.arpa ~117.100.in-addr.arpa
+                    ~118.100.in-addr.arpa ~119.100.in-addr.arpa
+                    ~120.100.in-addr.arpa ~121.100.in-addr.arpa
+                    ~122.100.in-addr.arpa ~123.100.in-addr.arpa
+                    ~124.100.in-addr.arpa ~125.100.in-addr.arpa
+                    ~126.100.in-addr.arpa ~127.100.in-addr.arpa
+                    ~64.100.in-addr.arpa ~65.100.in-addr.arpa
+                    ~66.100.in-addr.arpa ~67.100.in-addr.arpa
+                    ~68.100.in-addr.arpa ~69.100.in-addr.arpa
+                    ~70.100.in-addr.arpa ~71.100.in-addr.arpa
+                    ~72.100.in-addr.arpa ~73.100.in-addr.arpa
+                    ~74.100.in-addr.arpa ~75.100.in-addr.arpa
+                    ~76.100.in-addr.arpa ~77.100.in-addr.arpa
+                    ~78.100.in-addr.arpa ~79.100.in-addr.arpa
+                    ~80.100.in-addr.arpa ~81.100.in-addr.arpa
+                    ~82.100.in-addr.arpa ~83.100.in-addr.arpa
+                    ~84.100.in-addr.arpa ~85.100.in-addr.arpa
+                    ~86.100.in-addr.arpa ~87.100.in-addr.arpa
+                    ~88.100.in-addr.arpa ~89.100.in-addr.arpa
+                    ~90.100.in-addr.arpa ~91.100.in-addr.arpa
+                    ~92.100.in-addr.arpa ~93.100.in-addr.arpa
+                    ~94.100.in-addr.arpa ~95.100.in-addr.arpa
+                    ~96.100.in-addr.arpa ~97.100.in-addr.arpa
+                    ~98.100.in-addr.arpa ~99.100.in-addr.arpa ~ts.net
+
+$ cat /etc/hosts
+127.0.0.1 localhost
+127.0.1.1 srv-domotica
+
+# The following lines are desirable for IPv6 capable hosts
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters

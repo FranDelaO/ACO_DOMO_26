@@ -1,0 +1,3 @@
+7 nodos
+Pestañas: Flow 1
+Tipos: {'tab': 1, 'ui_tab': 1, 'ui_base': 1, 'ui_group': 1, 'inject': 1, 'function': 1, 'ui_gauge': 1}

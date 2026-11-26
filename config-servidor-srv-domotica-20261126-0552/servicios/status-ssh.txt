@@ -1,0 +1,29 @@
+● ssh.service - OpenBSD Secure Shell server
+     Loaded: loaded (/usr/lib/systemd/system/ssh.service; disabled; preset: enabled)
+     Active: active (running) since Thu 2026-11-26 05:25:54 UTC; 27min ago
+TriggeredBy: ● ssh.socket
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+    Process: 1672 ExecStartPre=/usr/sbin/sshd -t (code=exited, status=0/SUCCESS)
+   Main PID: 1673 (sshd)
+      Tasks: 1 (limit: 9432)
+     Memory: 5.8M (peak: 8.9M)
+        CPU: 458ms
+     CGroup: /system.slice/ssh.service
+             └─1673 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"
+
+Nov 26 05:48:52 srv-domotica sshd[2658]: pam_unix(sshd:session): session opened for user vboxuser(uid=1000) by vboxuser(uid=0)
+Nov 26 05:48:53 srv-domotica sshd[2658]: pam_unix(sshd:session): session closed for user vboxuser
+Nov 26 05:49:38 srv-domotica sshd[2720]: Accepted password for vboxuser from 192.168.31.187 port 63006 ssh2
+Nov 26 05:49:38 srv-domotica sshd[2720]: pam_unix(sshd:session): session opened for user vboxuser(uid=1000) by vboxuser(uid=0)
+Nov 26 05:49:38 srv-domotica sshd[2720]: pam_unix(sshd:session): session closed for user vboxuser
+Nov 26 05:50:20 srv-domotica sshd[2773]: Accepted password for vboxuser from 192.168.31.187 port 50572 ssh2
+Nov 26 05:50:20 srv-domotica sshd[2773]: pam_unix(sshd:session): session opened for user vboxuser(uid=1000) by vboxuser(uid=0)
+Nov 26 05:50:21 srv-domotica sshd[2773]: pam_unix(sshd:session): session closed for user vboxuser
+Nov 26 05:51:59 srv-domotica sshd[2838]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=192.168.31.187  user=vboxuser
+Nov 26 05:52:02 srv-domotica sshd[2838]: Failed password for vboxuser from 192.168.31.187 port 63968 ssh2
+Nov 26 05:52:11 srv-domotica sshd[2838]: Accepted password for vboxuser from 192.168.31.187 port 63968 ssh2
+Nov 26 05:52:11 srv-domotica sshd[2838]: pam_unix(sshd:session): session opened for user vboxuser(uid=1000) by vboxuser(uid=0)
+Nov 26 05:52:11 srv-domotica sshd[2838]: pam_unix(sshd:session): session closed for user vboxuser
+Nov 26 05:52:37 srv-domotica sshd[2899]: Accepted password for vboxuser from 192.168.31.187 port 59979 ssh2
+Nov 26 05:52:37 srv-domotica sshd[2899]: pam_unix(sshd:session): session opened for user vboxuser(uid=1000) by vboxuser(uid=0)

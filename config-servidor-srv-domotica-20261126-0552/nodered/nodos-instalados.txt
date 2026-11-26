@@ -1,0 +1,10 @@
+node-red-project@0.0.1 /home/vboxuser/.node-red
+├── node-red-contrib-buffer-parser@3.2.2
+├── node-red-contrib-play-audio@2.5.0
+├── node-red-dashboard@3.6.6
+├── node-red-node-pi-gpio@2.0.7
+├── node-red-node-ping@0.3.3
+├── node-red-node-random@0.4.1
+├── node-red-node-serialport@2.0.3
+└── node-red-node-smooth@0.1.2
+

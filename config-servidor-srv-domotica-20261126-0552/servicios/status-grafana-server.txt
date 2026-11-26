@@ -1,0 +1,39 @@
+● grafana-server.service - Grafana instance
+     Loaded: loaded (/usr/lib/systemd/system/grafana-server.service; enabled; preset: enabled)
+     Active: active (running) since Thu 2026-11-26 05:14:01 UTC; 38min ago
+       Docs: http://docs.grafana.org
+   Main PID: 1228 (grafana)
+      Tasks: 106 (limit: 9432)
+     Memory: 943.2M (peak: 980.3M)
+        CPU: 38.899s
+     CGroup: /system.slice/grafana-server.service
+             ├─1228 /usr/share/grafana/bin/grafana server --config=/etc/grafana/grafana.ini --pidfile=/run/grafana/grafana-server.pid --packaging=deb cfg:default.paths.logs=/var/log/grafana cfg:default.paths.data=/var/lib/grafana cfg:default.paths.plugins=/var/lib/grafana/plugins cfg:default.paths.provisioning=/etc/grafana/provisioning cfg:default.paths.bundled_plugins=/var/lib/grafana/plugins-bundled
+             ├─1334 /var/lib/grafana/plugins/elasticsearch/gpx_grafana_elasticsearch_datasource_linux_amd64
+             ├─1341 /var/lib/grafana/plugins/grafana-postgresql-datasource/gpx_grafana_postgresql_datasource_linux_amd64
+             ├─1348 /var/lib/grafana/plugins/grafana-pyroscope-datasource/gpx_grafana-pyroscope-datasource_linux_amd64
+             ├─1355 /var/lib/grafana/plugins/influxdb/gpx_grafana_influxdb_datasource_linux_amd64
+             ├─1362 /var/lib/grafana/plugins/jaeger/gpx_grafana-jaeger-datasource_linux_amd64
+             ├─1369 /var/lib/grafana/plugins/loki/gpx_grafana-loki-datasource_linux_amd64
+             ├─1376 /var/lib/grafana/plugins/mssql/gpx_grafana-mssql-datasource_linux_amd64
+             ├─1383 /var/lib/grafana/plugins/mysql/gpx_grafana-mysql-datasource_linux_amd64
+             ├─1390 /var/lib/grafana/plugins/opentsdb/gpx_grafana-opentsdb-datasource_linux_amd64
+             ├─1404 /var/lib/grafana/plugins/stackdriver/gpx_grafana_cloudmonitoring_datasource_linux_amd64
+             ├─1411 /var/lib/grafana/plugins/tempo/gpx_grafana-tempo-datasource_linux_amd64
+             ├─1417 /var/lib/grafana/plugins/zipkin/gpx_grafana-zipkin-datasource_linux_amd64
+             └─1435 /var/lib/grafana/plugins/prometheus/gpx_grafana-prometheus-datasource_linux_amd64
+
+Nov 26 05:44:17 srv-domotica grafana[1228]: logger=plugins.update.checker t=2026-11-26T05:44:17.977213095Z level=info msg="Update check succeeded" duration=287.923028ms
+Nov 26 05:44:17 srv-domotica grafana[1228]: logger=plugins.update.checker t=2026-11-26T05:44:17.977264285Z level=info msg="flag evaluation succeeded" flag="{Value:false EvaluationDetails:{FlagKey:pluginsAutoUpdate FlagType:bool ResolutionDetail:{Variant:default Reason:STATIC ErrorCode: ErrorMessage: FlagMetadata:map[]}}}" details="{Value:false EvaluationDetails:{FlagKey:pluginsAutoUpdate FlagType:bool ResolutionDetail:{Variant:default Reason:STATIC ErrorCode: ErrorMessage: FlagMetadata:map[]}}}"
+Nov 26 05:45:18 srv-domotica grafana[1228]: logger=bleve-backend namespace=default group=provisioning.grafana.app resource=repositories reason=getStats t=2026-11-26T05:45:18.503243152Z level=info msg="Building index using memory"
+Nov 26 05:45:18 srv-domotica grafana[1228]: logger=bleve-backend namespace=default group=provisioning.grafana.app resource=repositories reason=getStats t=2026-11-26T05:45:18.504171253Z level=info msg="Finished building index" elapsed=796.151µs listRV=1
+Nov 26 05:45:18 srv-domotica grafana[1228]: logger=bleve-backend namespace=default group=provisioning.grafana.app resource=repositories reason=getStats t=2026-11-26T05:45:18.504210002Z level=info msg="Storing index in cache" key="{Namespace:default Group:provisioning.grafana.app Resource:repositories}" expiration=2026-11-26T05:55:18.504208678Z
+Nov 26 05:45:18 srv-domotica grafana[1228]: logger=bleve-backend namespace=default group=playlist.grafana.app resource=playlists reason=getStats t=2026-11-26T05:45:18.506098078Z level=info msg="Building index using memory"
+Nov 26 05:45:18 srv-domotica grafana[1228]: logger=bleve-backend namespace=default group=playlist.grafana.app resource=playlists reason=getStats t=2026-11-26T05:45:18.507016215Z level=info msg="Finished building index" elapsed=733.763µs listRV=1
+Nov 26 05:45:18 srv-domotica grafana[1228]: logger=bleve-backend namespace=default group=playlist.grafana.app resource=playlists reason=getStats t=2026-11-26T05:45:18.507178241Z level=info msg="Storing index in cache" key="{Namespace:default Group:playlist.grafana.app Resource:playlists}" expiration=2026-11-26T05:55:18.507176145Z
+Nov 26 05:45:18 srv-domotica grafana[1228]: logger=bleve-backend namespace=default group=folder.grafana.app resource=folders reason=getStats t=2026-11-26T05:45:18.508391368Z level=info msg="Building index using memory"
+Nov 26 05:45:18 srv-domotica grafana[1228]: logger=bleve-backend namespace=default group=folder.grafana.app resource=folders reason=getStats t=2026-11-26T05:45:18.511482766Z level=info msg="Finished building index" elapsed=2.901859ms listRV=1791696630127000
+Nov 26 05:45:18 srv-domotica grafana[1228]: logger=bleve-backend namespace=default group=folder.grafana.app resource=folders reason=getStats t=2026-11-26T05:45:18.511522195Z level=info msg="Storing index in cache" key="{Namespace:default Group:folder.grafana.app Resource:folders}" expiration=2026-11-26T05:55:18.511520849Z
+Nov 26 05:45:18 srv-domotica grafana[1228]: logger=bleve-backend namespace=default group=dashboard.grafana.app resource=dashboards reason=getStats t=2026-11-26T05:45:18.512727435Z level=info msg="Building index using memory"
+Nov 26 05:45:18 srv-domotica grafana[1228]: logger=bleve-backend namespace=default group=dashboard.grafana.app resource=dashboards reason=getStats t=2026-11-26T05:45:18.513836544Z level=info msg="Finished building index" elapsed=962.93µs listRV=1791696630129012
+Nov 26 05:45:18 srv-domotica grafana[1228]: logger=bleve-backend namespace=default group=dashboard.grafana.app resource=dashboards reason=getStats t=2026-11-26T05:45:18.514021152Z level=info msg="Storing index in cache" key="{Namespace:default Group:dashboard.grafana.app Resource:dashboards}" expiration=2026-11-26T05:55:18.514019014Z
+Nov 26 05:45:18 srv-domotica grafana[1228]: logger=infra.usagestats t=2026-11-26T05:45:18.515594415Z level=info msg="Usage stats are ready to report"

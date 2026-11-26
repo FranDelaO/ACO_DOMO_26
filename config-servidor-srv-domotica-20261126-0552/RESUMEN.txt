@@ -1,0 +1,34 @@
+RESUMEN · srv-domotica · 2026-11-26 05:53
+Modo: contraseñas ocultas
+IP LAN: 192.168.31.49/24  ·  IP VPN: 100.101.83.109
+Congelamientos del kernel en este arranque: 0
+
+mosquitto        activo=active     arranque=enabled
+nodered          activo=active     arranque=enabled
+named            activo=active     arranque=enabled
+mongod           activo=active     arranque=enabled
+postgresql       activo=active     arranque=enabled
+grafana-server   activo=active     arranque=enabled
+nginx            activo=active     arranque=enabled
+ssh              activo=active     arranque=disabled
+tailscaled       activo=active     arranque=enabled
+
+Puente MQTT: NO configurado
+Usuarios MQTT: esp32 nodered 
+
+Node-RED:
+7 nodos
+Pestañas: Flow 1
+Tipos: {'tab': 1, 'ui_tab': 1, 'ui_base': 1, 'ui_group': 1, 'inject': 1, 'function': 1, 'ui_gauge': 1}
+Dashboard 2.0: NO instalado
+
+MongoDB:
+  (sin colecciones en domotica)
+
+PostgreSQL (tablas y filas):
+----------+-------
+ usuarios |     0
+(1 row)
+
+
+Todo en orden.

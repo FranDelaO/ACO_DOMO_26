@@ -1,0 +1,12 @@
+● mongod.service - MongoDB Database Server
+     Loaded: loaded (/usr/lib/systemd/system/mongod.service; enabled; preset: enabled)
+     Active: active (running) since Thu 2026-11-26 05:13:54 UTC; 39min ago
+       Docs: https://docs.mongodb.org/manual
+   Main PID: 974 (mongod)
+     Memory: 300.0M (peak: 369.6M)
+        CPU: 18.622s
+     CGroup: /system.slice/mongod.service
+             └─974 /usr/bin/mongod --config /etc/mongod.conf
+
+Nov 26 05:13:54 srv-domotica systemd[1]: Started mongod.service - MongoDB Database Server.
+Nov 26 05:13:58 srv-domotica mongod[974]: {"t":{"$date":"2026-11-26T05:13:58.195Z"},"s":"I",  "c":"CONTROL",  "id":7484500, "ctx":"main","msg":"Environment variable MONGODB_CONFIG_OVERRIDE_NOFORK == 1, overriding \"processManagement.fork\" to false"}

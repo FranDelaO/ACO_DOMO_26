@@ -1,0 +1,3 @@
+BASE admin Long('40960')
+BASE config Long('110592')
+BASE local Long('90112')

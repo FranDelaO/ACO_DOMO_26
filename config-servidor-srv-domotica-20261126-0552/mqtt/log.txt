@@ -1,0 +1,63 @@
+# Últimas 60 líneas del log de Mosquitto
+1795477910: Opening ipv6 listen socket on port 1883.
+1795477910: mosquitto version 2.0.18 running
+1795479712: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1795480601: New connection from 127.0.0.1:55228 on port 1883.
+1795480601: Client auto-5A1CC9CE-2868-5C7C-2980-85AC095CA976 disconnected, not authorised.
+1795481060: New connection from 127.0.0.1:32938 on port 1883.
+1795481060: Client auto-A757123D-5899-A441-95E1-FC17F6408EC1 disconnected, not authorised.
+1795481513: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1795483314: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1795483527: New connection from 127.0.0.1:40308 on port 1883.
+1795483527: Client auto-275308E1-DED4-9900-28CC-02AA62598AE4 disconnected, not authorised.
+1795485115: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1795486916: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1795488717: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1795490518: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1795492319: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1795494120: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1795495921: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1795497722: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1795499523: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1795501324: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1795502786: mosquitto version 2.0.18 terminating
+1795502786: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1795502786: mosquitto version 2.0.18 starting
+1795502786: Config loaded from /etc/mosquitto/mosquitto.conf.
+1795502786: Opening ipv4 listen socket on port 1883.
+1795502786: Opening ipv6 listen socket on port 1883.
+1795502786: mosquitto version 2.0.18 running
+1795502822: mosquitto version 2.0.18 terminating
+1795502822: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1795502823: mosquitto version 2.0.18 starting
+1795502823: Config loaded from /etc/mosquitto/mosquitto.conf.
+1795502823: Opening ipv4 listen socket on port 1883.
+1795502823: Opening ipv6 listen socket on port 1883.
+1795502823: mosquitto version 2.0.18 running
+1795502836: mosquitto version 2.0.18 terminating
+1795502836: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1795502836: mosquitto version 2.0.18 starting
+1795502836: Config loaded from /etc/mosquitto/mosquitto.conf.
+1795502836: Opening ipv4 listen socket on port 1883.
+1795502836: Opening ipv6 listen socket on port 1883.
+1795502836: mosquitto version 2.0.18 running
+1795502950: mosquitto version 2.0.18 terminating
+1795502950: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1795502951: mosquitto version 2.0.18 starting
+1795502951: Config loaded from /etc/mosquitto/mosquitto.conf.
+1795502951: Opening ipv4 listen socket on port 1883.
+1795502951: Opening ipv6 listen socket on port 1883.
+1795502951: mosquitto version 2.0.18 running
+1795504751: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+1795670035: mosquitto version 2.0.18 starting
+1795670035: Config loaded from /etc/mosquitto/mosquitto.conf.
+1795670035: Opening ipv4 listen socket on port 1883.
+1795670035: Opening ipv6 listen socket on port 1883.
+1795670035: mosquitto version 2.0.18 running
+1795671090: New connection from 127.0.0.1:46384 on port 1883.
+1795671090: Client auto-81F21757-F9C5-DA30-9066-B61BE029E928 disconnected, not authorised.
+1795671121: New connection from 127.0.0.1:49776 on port 1883.
+1795671121: Client auto-9E4E11F2-1CEB-1ABE-07B1-215FE2804954 disconnected, not authorised.
+1795671838: Saving in-memory database to /var/lib/mosquitto//mosquitto.db.
+
+# Eventos del puente

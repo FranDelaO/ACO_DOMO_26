@@ -1,0 +1,27 @@
+● named.service - BIND Domain Name Server
+     Loaded: loaded (/usr/lib/systemd/system/named.service; enabled; preset: enabled)
+     Active: active (running) since Thu 2026-11-26 05:13:55 UTC; 39min ago
+       Docs: man:named(8)
+   Main PID: 829 (named)
+     Status: "running"
+      Tasks: 8 (limit: 9432)
+     Memory: 32.0M (peak: 32.4M)
+        CPU: 273ms
+     CGroup: /system.slice/named.service
+             └─829 /usr/sbin/named -f -u bind
+
+Nov 26 05:13:59 srv-domotica named[829]: network unreachable resolving 'ns3.canonical.com/AAAA/IN': 2620:2d:4000:1::43#53
+Nov 26 05:13:59 srv-domotica named[829]: network unreachable resolving 'ns3.canonical.com/A/IN': 2620:2d:4000:1::43#53
+Nov 26 05:13:59 srv-domotica named[829]: network unreachable resolving 'ns2.canonical.com/AAAA/IN': 2620:2d:4000:1::43#53
+Nov 26 05:13:59 srv-domotica named[829]: network unreachable resolving 'ns2.canonical.com/A/IN': 2620:2d:4000:1::43#53
+Nov 26 05:13:59 srv-domotica named[829]: network unreachable resolving 'ns3.canonical.com/AAAA/IN': 2620:2d:4000:1::44#53
+Nov 26 05:13:59 srv-domotica named[829]: network unreachable resolving 'ns3.canonical.com/A/IN': 2620:2d:4000:1::44#53
+Nov 26 05:13:59 srv-domotica named[829]: network unreachable resolving 'ns2.canonical.com/AAAA/IN': 2620:2d:4000:1::44#53
+Nov 26 05:13:59 srv-domotica named[829]: network unreachable resolving 'ns2.canonical.com/A/IN': 2620:2d:4000:1::44#53
+Nov 26 05:14:00 srv-domotica named[829]: network unreachable resolving 'snapcraft.io/DS/IN': 2a01:8840:a1::17#53
+Nov 26 05:14:01 srv-domotica named[829]: listening on IPv4 interface tailscale0, 100.101.83.109#53
+Nov 26 05:14:01 srv-domotica named[829]: listening on IPv6 interface tailscale0, fd7a:115c:a1e0::8137:536e#53
+Nov 26 05:31:27 srv-domotica named[829]: network unreachable resolving 'google.com/A/IN': 2001:4860:4802:36::a#53
+Nov 26 05:31:27 srv-domotica named[829]: network unreachable resolving 'google.com/A/IN': 2001:4860:4802:38::a#53
+Nov 26 05:31:27 srv-domotica named[829]: network unreachable resolving 'google.com/A/IN': 2001:4860:4802:32::a#53
+Nov 26 05:31:27 srv-domotica named[829]: network unreachable resolving 'google.com/A/IN': 2001:4860:4802:34::a#53

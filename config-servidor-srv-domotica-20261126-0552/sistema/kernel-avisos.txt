@@ -1,0 +1,19 @@
+# Avisos del kernel en este arranque (congelamientos, errores)
+Nov 26 05:13:48 srv-domotica kernel: RETBleed: WARNING: Spectre v2 mitigation leaves CPU vulnerable to RETBleed attacks, data leaks possible!
+Nov 26 05:13:48 srv-domotica kernel: acpi PNP0A03:00: fail to add MMCONFIG information, can't access extended configuration space under this bridge
+Nov 26 05:13:48 srv-domotica kernel: device-mapper: core: CONFIG_IMA_DISABLE_HTABLE is disabled. Duplicate IMA measurements will not be recorded in the IMA log.
+Nov 26 05:13:49 srv-domotica kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* vmwgfx seems to be running on an unsupported hypervisor.
+Nov 26 05:13:49 srv-domotica kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* This configuration is likely broken.
+Nov 26 05:13:49 srv-domotica kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* Please switch to a supported graphics device to avoid problems.
+Nov 26 05:13:52 srv-domotica systemd-journald[323]: File /var/log/journal/0037a03b636a4b9c81a84c8bb28269dd/system.journal corrupted or uncleanly shut down, renaming and replacing.
+Nov 26 05:13:57 srv-domotica kernel: kauditd_printk_skb: 111 callbacks suppressed
+Nov 26 05:13:59 srv-domotica systemd-journald[323]: File /var/log/journal/0037a03b636a4b9c81a84c8bb28269dd/user-1000.journal corrupted or uncleanly shut down, renaming and replacing.
+Nov 26 05:14:00 srv-domotica kernel: workqueue: blk_mq_run_work_fn hogged CPU for >10000us 4 times, consider switching to WQ_UNBOUND
+Nov 26 05:14:00 srv-domotica kernel: workqueue: blk_mq_run_work_fn hogged CPU for >10000us 8 times, consider switching to WQ_UNBOUND
+Nov 26 05:21:28 srv-domotica kernel: workqueue: drm_fb_helper_damage_work hogged CPU for >10000us 4 times, consider switching to WQ_UNBOUND
+
+# Conteo de congelamientos: 0
+
+
+$ uptime
+ 05:52:56 up 39 min,  3 users,  load average: 0.07, 0.06, 0.08

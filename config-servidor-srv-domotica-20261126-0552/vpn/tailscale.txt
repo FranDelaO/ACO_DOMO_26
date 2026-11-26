@@ -1,0 +1,10 @@
+
+$ tailscale ip -4
+100.101.83.109
+
+$ tailscale status
+100.101.83.109  srv-domotica     fran.delao@  linux    -                          
+100.73.169.77   desktop-d7cj4s4  fran.delao@  windows  offline, last seen 2d ago  
+
+$ systemctl is-enabled tailscaled
+enabled

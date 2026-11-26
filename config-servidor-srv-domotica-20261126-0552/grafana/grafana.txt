@@ -1,0 +1,23 @@
+
+$ grafana cli plugins ls
+installed plugins:
+
+opentsdb @ 13.0.8
+stackdriver @ 12.6.7
+tempo @ 13.5.0
+grafana-exploretraces-app @ 2.2.1
+grafana-advisor-app @ 1.1.4
+grafana-metricsdrilldown-app @ 3.0.0
+grafana-postgresql-datasource @ 13.0.7
+influxdb @ 13.2.0
+grafana-lokiexplore-app @ 3.2.0
+grafana-pyroscope-app @ 2.3.1
+grafana-pyroscope-datasource @ 13.0.10
+prometheus @ 13.3.0
+zipkin @ 12.4.13
+loki @ 13.2.5
+elasticsearch @ 12.9.7
+jaeger @ 13.0.8
+mssql @ 13.0.10
+mysql @ 13.1.4
+(sqlite3 no instalado: no se listan fuentes de datos ni dashboards; instalar con: sudo apt install -y sqlite3)

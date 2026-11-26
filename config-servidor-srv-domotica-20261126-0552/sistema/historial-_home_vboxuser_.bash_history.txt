@@ -1,0 +1,124 @@
+curl -fsSL https://www.mongodb.org/static/pgp/server-8.0.asc | sudo gpg -o /usr/share/keyrings/mongodb-server-8.0.gpg --dearmor
+echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-8.0.gpg ] https://repo.mongodb.org/apt/ubuntu noble/mongodb-org/8.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-8.0.list
+sudo apt update && sudo apt install -y mongodb-org
+sudo systemctl enable --now mongod
+mongosh --eval 'db.runCommand({ping: 1})'
+mongosh
+sudo apt install -y postgresql postgresql-contrib
+sudo systemctl enable --now postgresql
+sudo -u postgres psql
+sudo apt install -y nodejs npm
+bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)
+sudo systemctl enable --now nodered
+bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered) --node22
+sudo systemctl restart nodered
+sudo ufw allow 1880
+sudo apt install -y mosquitto mosquitto-clients
+sudo mosquitto_passwd -c /etc/mosquitto/passwd esp32
+sudo nano /etc/mosquitto/conf.d/domotica.conf
+sudo systemctl restart mosquitto && sudo systemctl enable mosquitto
+sudo systemctl status mosquitto.service
+cat /etc/mosquitto/conf.d/domotica.conf
+sudo mosquitto -c /etc/mosquitto/mosquitto.conf
+sudo chown mosquitto:mosquitto /etc/mosquitto/passwd
+sudo systemctl restart mosquitto && sudo systemctl enable mosquitto
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://apt.grafana.com/gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/grafana.gpg
+echo "deb [signed-by=/etc/apt/keyrings/grafana.gpg] https://apt.grafana.com stable main" | sudo tee /etc/apt/sources.list.d/grafana.list
+sudo apt update && sudo apt install -y grafana
+sudo systemctl enable --now grafana-server
+sudo ufw allow 3000
+sudo apt install -y nginx
+sudo nano /etc/nginx/sites-available/domotica
+sudo ln -s /etc/nginx/sites-available/domotica /etc/nginx/sites-enabled/
+sudo rm /etc/nginx/sites-enabled/default
+sudo nginx -t
+sudo systemctl reload nginx
+sudo ufw allow 22/tcp
+sudo ufw allow 53
+sudo ufw allow 80/tcp
+sudo ufw allow 1883/tcp
+sudo ufw allow 3000/tcp
+sudo ufw enable
+sudo ufw status numbered
+sudo app install -y bind9 bind9utils
+sudo apt install -y bind9 bind9utils
+sudo nano/etc/bind/named.conf.local
+sudo nano /etc/bind/named.conf.local
+sudo cp /etc/bind/db.local /etc/bind/db.domotica.local
+sudo nano /etc/bind/db.domotica.local
+sudo named-checkzone domotica.local /etc/bind/db.domotica.local
+sudo systemctl restart bind9 && sudo systemctl enable bind9
+sudo named-checkconf
+sudo nano /etc/bind/named.conf.local
+sudo systemctl restart bind9 && sudo systemctl enable bind9
+sudo systemctl restart named && sudo systemctl enable named
+dig @192.168.0.50 dashboard.domotica.local +short
+mongosh --host 192.168.0.50
+exit
+sudo nano /etc/mongod.conf
+sudo systemctl restart mongod
+mongosh --host 192.168.0.50
+psql -h localhost -U noderd -d domotica
+sudo -u postgres psql
+psql -h localhost -U noderd -d domotica
+exit
+lsblk -f
+df -h /var /datos /backup
+sudo apt update && sudo apt upgrade -y
+sudo apt install -y curl gnugp ca-certificates lsb-realease net-tools
+sudo apt install -y curl gnupg ca-certificates lsb-realease net-tools
+sudo apt install -y curl gnupg ca-certificates lsb-release net-tools
+sudo ufw allow ssh
+sudo ufw enable
+sudo nano /etc/netplan/50-cloud-init.yaml
+sudo chmod 600 /etc/netplan/50-cloud-init.yaml
+sudo netplan apply
+ping -c 3 8.8.8.8
+lsblk -f
+df -h
+systemctl is-active bind9 mongod postgredql nodered mosquitto grafana-server nginx
+systemctl is-active bing9 mongod postgresql nodered mosquitto grafana-server nginx
+sudo bash ~/recolectar_config.sh
+exit
+sudo sed -i 's/192\.168\.0\.50/192.168.31.49/g; s/2026100801/2026112301/' /etc/bind/db.domotica.local
+sudo named-checkzone domotica.local /etc/bind/db.domotica.local
+sudo systemctl reload named
+dig @127.0.0.1 dashboard.domotica.local +short
+sudo sed -i 's/bindIp: .*/bindIp: 127.0.0.1/' /etc/mongod.conf
+sudo systemctl restart mongod
+echo "network: {config: disabled}" | sudo tee /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg
+sudo mosquitto_passwd /etc/mosquitto/passwd nodered
+sudo systemctl restart mosquitto
+exit
+sudo system enable --now nodered
+sudo systemctl enable --now nodered
+systemctl status --no-pager
+reboot
+shutdown
+exit
+ip -br a
+systemctl status ssh
+sudo
+sudo apt upodate 
+sudo apt update && sudo apt install -y openssh-server
+ip -br  a
+ip route
+cat /etc/netplan/*.yaml
+sudo nano /etc/netplan/50-cloud-init.yaml
+sudo net try
+sudo netplan try
+ping -c 3 8.8.8.8
+sudo apt update && sudo apt install -y openssh-server
+ip route
+ssh vboxuser@192.168.31.49
+exit
+curl -fsSL https://tailscale.com/install.sh | sh
+sudo tailscale up --hostname=srv-domotica
+tailscale ip -4
+sudo ufw allow in on tailscale0
+sudo ufw status
+sudo bash ~/recolectar_config.sh
+scp vboxuser@192.168.31.49:config-fase3-*.tar.gz .
+scp vboxuser@192.168.31.49:/tmp/config-servidor-*.tar.gz .
+exit

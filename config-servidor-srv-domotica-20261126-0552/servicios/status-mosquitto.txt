@@ -1,0 +1,19 @@
+● mosquitto.service - Mosquitto MQTT Broker
+     Loaded: loaded (/usr/lib/systemd/system/mosquitto.service; enabled; preset: enabled)
+     Active: active (running) since Thu 2026-11-26 05:13:55 UTC; 39min ago
+       Docs: man:mosquitto.conf(5)
+             man:mosquitto(8)
+    Process: 824 ExecStartPre=/bin/mkdir -m 740 -p /var/log/mosquitto (code=exited, status=0/SUCCESS)
+    Process: 905 ExecStartPre=/bin/chown mosquitto:mosquitto /var/log/mosquitto (code=exited, status=0/SUCCESS)
+    Process: 941 ExecStartPre=/bin/mkdir -m 740 -p /run/mosquitto (code=exited, status=0/SUCCESS)
+    Process: 958 ExecStartPre=/bin/chown mosquitto:mosquitto /run/mosquitto (code=exited, status=0/SUCCESS)
+   Main PID: 988 (mosquitto)
+      Tasks: 1 (limit: 9432)
+     Memory: 2.1M (peak: 2.4M)
+        CPU: 1.010s
+     CGroup: /system.slice/mosquitto.service
+             └─988 /usr/sbin/mosquitto -c /etc/mosquitto/mosquitto.conf
+
+Nov 26 05:13:53 srv-domotica systemd[1]: Starting mosquitto.service - Mosquitto MQTT Broker...
+Nov 26 05:13:55 srv-domotica mosquitto[988]: 1795670035: Loading config file /etc/mosquitto/conf.d/domotica.conf
+Nov 26 05:13:55 srv-domotica systemd[1]: Started mosquitto.service - Mosquitto MQTT Broker.

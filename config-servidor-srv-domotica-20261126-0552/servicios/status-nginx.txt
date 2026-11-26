@@ -1,0 +1,17 @@
+● nginx.service - A high performance web server and a reverse proxy server
+     Loaded: loaded (/usr/lib/systemd/system/nginx.service; enabled; preset: enabled)
+     Active: active (running) since Thu 2026-11-26 05:13:56 UTC; 39min ago
+       Docs: man:nginx(8)
+    Process: 1008 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+    Process: 1023 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+   Main PID: 1041 (nginx)
+      Tasks: 3 (limit: 9432)
+     Memory: 4.2M (peak: 10.5M)
+        CPU: 250ms
+     CGroup: /system.slice/nginx.service
+             ├─1041 "nginx: master process /usr/sbin/nginx -g daemon on; master_process on;"
+             ├─1043 "nginx: worker process"
+             └─1044 "nginx: worker process"
+
+Nov 26 05:13:55 srv-domotica systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+Nov 26 05:13:56 srv-domotica systemd[1]: Started nginx.service - A high performance web server and a reverse proxy server.

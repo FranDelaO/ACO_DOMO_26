@@ -1,0 +1,92 @@
+mosquitto        activo=active     arranque=enabled
+nodered          activo=active     arranque=enabled
+named            activo=active     arranque=enabled
+mongod           activo=active     arranque=enabled
+postgresql       activo=active     arranque=enabled
+grafana-server   activo=active     arranque=enabled
+nginx            activo=active     arranque=enabled
+ssh              activo=active     arranque=disabled
+tailscaled       activo=active     arranque=enabled
+
+$ systemctl is-active ssh.socket
+active
+
+$ systemctl --failed --no-pager
+  UNIT LOAD ACTIVE SUB DESCRIPTION
+
+0 loaded units listed.
+
+$ ss -tulpn
+Netid State  Recv-Q Send-Q                          Local Address:Port  Peer Address:PortProcess                                                                         
+udp   UNCONN 0      0                              100.101.83.109:53         0.0.0.0:*    users:(("named",pid=829,fd=51))                                                
+udp   UNCONN 0      0                              100.101.83.109:53         0.0.0.0:*    users:(("named",pid=829,fd=50))                                                
+udp   UNCONN 0      0                               192.168.31.49:53         0.0.0.0:*    users:(("named",pid=829,fd=34))                                                
+udp   UNCONN 0      0                               192.168.31.49:53         0.0.0.0:*    users:(("named",pid=829,fd=35))                                                
+udp   UNCONN 0      0                                   127.0.0.1:53         0.0.0.0:*    users:(("named",pid=829,fd=28))                                                
+udp   UNCONN 0      0                                   127.0.0.1:53         0.0.0.0:*    users:(("named",pid=829,fd=29))                                                
+udp   UNCONN 0      0                                  127.0.0.54:53         0.0.0.0:*    users:(("systemd-resolve",pid=710,fd=16))                                      
+udp   UNCONN 0      0                               127.0.0.53%lo:53         0.0.0.0:*    users:(("systemd-resolve",pid=710,fd=14))                                      
+udp   UNCONN 0      0                                     0.0.0.0:41641      0.0.0.0:*    users:(("tailscaled",pid=860,fd=20))                                           
+udp   UNCONN 0      0                                       [::1]:53            [::]:*    users:(("named",pid=829,fd=39))                                                
+udp   UNCONN 0      0                                       [::1]:53            [::]:*    users:(("named",pid=829,fd=38))                                                
+udp   UNCONN 0      0           [fe80::a00:27ff:fe8c:2daa]%enp0s3:53            [::]:*    users:(("named",pid=829,fd=43))                                                
+udp   UNCONN 0      0           [fe80::a00:27ff:fe8c:2daa]%enp0s3:53            [::]:*    users:(("named",pid=829,fd=42))                                                
+udp   UNCONN 0      0      [fe80::814d:e90f:9dd1:79fe]%tailscale0:53            [::]:*    users:(("named",pid=829,fd=61))                                                
+udp   UNCONN 0      0      [fe80::814d:e90f:9dd1:79fe]%tailscale0:53            [::]:*    users:(("named",pid=829,fd=60))                                                
+udp   UNCONN 0      0                 [fd7a:115c:a1e0::8137:536e]:53            [::]:*    users:(("named",pid=829,fd=54))                                                
+udp   UNCONN 0      0                 [fd7a:115c:a1e0::8137:536e]:53            [::]:*    users:(("named",pid=829,fd=55))                                                
+udp   UNCONN 0      0                                        [::]:41641         [::]:*    users:(("tailscaled",pid=860,fd=19))                                           
+tcp   LISTEN 0      5                                   127.0.0.1:953        0.0.0.0:*    users:(("named",pid=829,fd=46))                                                
+tcp   LISTEN 0      5                                   127.0.0.1:953        0.0.0.0:*    users:(("named",pid=829,fd=47))                                                
+tcp   LISTEN 0      10                              192.168.31.49:53         0.0.0.0:*    users:(("named",pid=829,fd=36))                                                
+tcp   LISTEN 0      10                              192.168.31.49:53         0.0.0.0:*    users:(("named",pid=829,fd=37))                                                
+tcp   LISTEN 0      10                                  127.0.0.1:53         0.0.0.0:*    users:(("named",pid=829,fd=30))                                                
+tcp   LISTEN 0      10                                  127.0.0.1:53         0.0.0.0:*    users:(("named",pid=829,fd=31))                                                
+tcp   LISTEN 0      4096                100.101.83.109%tailscale0:50091      0.0.0.0:*    users:(("tailscaled",pid=860,fd=21))                                           
+tcp   LISTEN 0      4096                            127.0.0.53%lo:53         0.0.0.0:*    users:(("systemd-resolve",pid=710,fd=15))                                      
+tcp   LISTEN 0      4096                               127.0.0.54:53         0.0.0.0:*    users:(("systemd-resolve",pid=710,fd=17))                                      
+tcp   LISTEN 0      10                             100.101.83.109:53         0.0.0.0:*    users:(("named",pid=829,fd=53))                                                
+tcp   LISTEN 0      10                             100.101.83.109:53         0.0.0.0:*    users:(("named",pid=829,fd=52))                                                
+tcp   LISTEN 0      200                                 127.0.0.1:5432       0.0.0.0:*    users:(("postgres",pid=990,fd=6))                                              
+tcp   LISTEN 0      4096                                127.0.0.1:27017      0.0.0.0:*    users:(("mongod",pid=974,fd=9))                                                
+tcp   LISTEN 0      4096                                  0.0.0.0:22         0.0.0.0:*    users:(("sshd",pid=1673,fd=3),("systemd",pid=1,fd=93))                         
+tcp   LISTEN 0      511                                   0.0.0.0:80         0.0.0.0:*    users:(("nginx",pid=1044,fd=5),("nginx",pid=1043,fd=5),("nginx",pid=1041,fd=5))
+tcp   LISTEN 0      100                                   0.0.0.0:1883       0.0.0.0:*    users:(("mosquitto",pid=988,fd=5))                                             
+tcp   LISTEN 0      511                                   0.0.0.0:1880       0.0.0.0:*    users:(("node-red",pid=836,fd=22))                                             
+tcp   LISTEN 0      4096                                        *:3000             *:*    users:(("grafana",pid=1228,fd=62))                                             
+tcp   LISTEN 0      10                                      [::1]:53            [::]:*    users:(("named",pid=829,fd=41))                                                
+tcp   LISTEN 0      10                                      [::1]:53            [::]:*    users:(("named",pid=829,fd=40))                                                
+tcp   LISTEN 0      5                                       [::1]:953           [::]:*    users:(("named",pid=829,fd=48))                                                
+tcp   LISTEN 0      5                                       [::1]:953           [::]:*    users:(("named",pid=829,fd=49))                                                
+tcp   LISTEN 0      10     [fe80::814d:e90f:9dd1:79fe]%tailscale0:53            [::]:*    users:(("named",pid=829,fd=62))                                                
+tcp   LISTEN 0      10     [fe80::814d:e90f:9dd1:79fe]%tailscale0:53            [::]:*    users:(("named",pid=829,fd=63))                                                
+tcp   LISTEN 0      10                [fd7a:115c:a1e0::8137:536e]:53            [::]:*    users:(("named",pid=829,fd=56))                                                
+tcp   LISTEN 0      10                [fd7a:115c:a1e0::8137:536e]:53            [::]:*    users:(("named",pid=829,fd=57))                                                
+tcp   LISTEN 0      4096                                     [::]:22            [::]:*    users:(("sshd",pid=1673,fd=4),("systemd",pid=1,fd=94))                         
+tcp   LISTEN 0      100                                      [::]:1883          [::]:*    users:(("mosquitto",pid=988,fd=6))                                             
+tcp   LISTEN 0      4096   [fd7a:115c:a1e0::8137:536e]%tailscale0:59599         [::]:*    users:(("tailscaled",pid=860,fd=22))                                           
+tcp   LISTEN 0      10          [fe80::a00:27ff:fe8c:2daa]%enp0s3:53            [::]:*    users:(("named",pid=829,fd=45))                                                
+tcp   LISTEN 0      10          [fe80::a00:27ff:fe8c:2daa]%enp0s3:53            [::]:*    users:(("named",pid=829,fd=44))                                                
+
+$ ufw status numbered
+Status: active
+
+     To                         Action      From
+     --                         ------      ----
+[ 1] 22/tcp                     ALLOW IN    Anywhere                  
+[ 2] 1880                       ALLOW IN    Anywhere                  
+[ 3] 3000                       ALLOW IN    Anywhere                  
+[ 4] 53                         ALLOW IN    Anywhere                  
+[ 5] 80/tcp                     ALLOW IN    Anywhere                  
+[ 6] 1883/tcp                   ALLOW IN    Anywhere                  
+[ 7] 3000/tcp                   ALLOW IN    Anywhere                  
+[ 8] Anywhere on tailscale0     ALLOW IN    Anywhere                  
+[ 9] 22/tcp (v6)                ALLOW IN    Anywhere (v6)             
+[10] 1880 (v6)                  ALLOW IN    Anywhere (v6)             
+[11] 3000 (v6)                  ALLOW IN    Anywhere (v6)             
+[12] 53 (v6)                    ALLOW IN    Anywhere (v6)             
+[13] 80/tcp (v6)                ALLOW IN    Anywhere (v6)             
+[14] 1883/tcp (v6)              ALLOW IN    Anywhere (v6)             
+[15] 3000/tcp (v6)              ALLOW IN    Anywhere (v6)             
+[16] Anywhere (v6) on tailscale0 ALLOW IN    Anywhere (v6)             
+

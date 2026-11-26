@@ -1,0 +1,9 @@
+● postgresql.service - PostgreSQL RDBMS
+     Loaded: loaded (/usr/lib/systemd/system/postgresql.service; enabled; preset: enabled)
+     Active: active (exited) since Thu 2026-11-26 05:14:01 UTC; 38min ago
+    Process: 1218 ExecStart=/bin/true (code=exited, status=0/SUCCESS)
+   Main PID: 1218 (code=exited, status=0/SUCCESS)
+        CPU: 2ms
+
+Nov 26 05:14:01 srv-domotica systemd[1]: Starting postgresql.service - PostgreSQL RDBMS...
+Nov 26 05:14:01 srv-domotica systemd[1]: Finished postgresql.service - PostgreSQL RDBMS.

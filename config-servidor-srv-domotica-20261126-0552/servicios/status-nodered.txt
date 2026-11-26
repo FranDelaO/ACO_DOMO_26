@@ -1,0 +1,26 @@
+● nodered.service - Node-RED graphical event wiring tool
+     Loaded: loaded (/usr/lib/systemd/system/nodered.service; enabled; preset: enabled)
+     Active: active (running) since Thu 2026-11-26 05:13:53 UTC; 39min ago
+       Docs: http://nodered.org/docs/hardware/raspberrypi.html
+   Main PID: 836 (node-red)
+      Tasks: 11 (limit: 9432)
+     Memory: 165.8M (peak: 179.1M)
+        CPU: 6.054s
+     CGroup: /system.slice/nodered.service
+             └─836 node-red
+
+Nov 26 05:13:59 srv-domotica Node-RED[836]: 26 Nov 05:13:59 - [info] Node-RED version: v5.0.8
+Nov 26 05:13:59 srv-domotica Node-RED[836]: 26 Nov 05:13:59 - [info] Node.js  version: v22.23.3
+Nov 26 05:13:59 srv-domotica Node-RED[836]: 26 Nov 05:13:59 - [info] Linux 6.8.0-149-generic x64 LE
+Nov 26 05:13:59 srv-domotica Node-RED[836]: 26 Nov 05:13:59 - [info] Loading palette nodes
+Nov 26 05:14:03 srv-domotica Node-RED[836]: 26 Nov 05:14:03 - [info] Dashboard version 3.6.6 started at /ui
+Nov 26 05:14:04 srv-domotica Node-RED[836]: 26 Nov 05:14:04 - [warn] rpi-gpio : Raspberry Pi specific node set inactive
+Nov 26 05:14:05 srv-domotica Node-RED[836]: 26 Nov 05:14:05 - [info] Settings file  : /home/vboxuser/.node-red/settings.js
+Nov 26 05:14:05 srv-domotica Node-RED[836]: 26 Nov 05:14:05 - [info] Context store  : 'default' [module=memory]
+Nov 26 05:14:05 srv-domotica Node-RED[836]: 26 Nov 05:14:05 - [info] User directory : /home/vboxuser/.node-red
+Nov 26 05:14:05 srv-domotica Node-RED[836]: 26 Nov 05:14:05 - [warn] Projects disabled : editorTheme.projects.enabled=false
+Nov 26 05:14:05 srv-domotica Node-RED[836]: 26 Nov 05:14:05 - [info] Flows file     : /home/vboxuser/.node-red/flows.json
+Nov 26 05:14:05 srv-domotica Node-RED[836]: 26 Nov 05:14:05 - [warn] Encrypted credentials not found
+Nov 26 05:14:05 srv-domotica Node-RED[836]: 26 Nov 05:14:05 - [info] Server now running at http://127.0.0.1:1880/
+Nov 26 05:14:05 srv-domotica Node-RED[836]: 26 Nov 05:14:05 - [info] Starting flows
+Nov 26 05:14:05 srv-domotica Node-RED[836]: 26 Nov 05:14:05 - [info] Started flows

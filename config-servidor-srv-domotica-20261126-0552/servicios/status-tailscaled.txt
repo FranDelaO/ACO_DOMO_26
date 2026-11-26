@@ -1,0 +1,27 @@
+● tailscaled.service - Tailscale node agent
+     Loaded: loaded (/usr/lib/systemd/system/tailscaled.service; enabled; preset: enabled)
+     Active: active (running) since Thu 2026-11-26 05:13:56 UTC; 39min ago
+       Docs: https://tailscale.com/docs/
+   Main PID: 860 (tailscaled)
+     Status: "Connected; fran.delao@gmail.com; 100.101.83.109 fd7a:115c:a1e0::8137:536e"
+      Tasks: 9 (limit: 9432)
+     Memory: 42.1M (peak: 42.6M)
+        CPU: 4.608s
+     CGroup: /system.slice/tailscaled.service
+             └─860 /usr/sbin/tailscaled --state=/var/lib/tailscale/tailscaled.state --socket=/run/tailscale/tailscaled.sock --port=41641
+
+Nov 26 05:21:20 srv-domotica tailscaled[860]: dns: Resolvercfg: {Routes:{ts.net.:[199.247.155.53 2620:111:8007::53]} Hosts:0 LocalDomains:[tail8ec581.ts.net.]+65arpa}
+Nov 26 05:21:20 srv-domotica tailscaled[860]: dns: OScfg: {Nameservers:[100.100.100.100 fd7a:115c:a1e0::53] SearchDomains:[tail8ec581.ts.net.] MatchDomains:[tail8ec581.ts.net. ts.net.]+65arpa}
+Nov 26 05:22:32 srv-domotica tailscaled[860]: magicsock: new contact: peer=[+wOUX] usec=514700337 cached=false via=derp
+Nov 26 05:22:32 srv-domotica tailscaled[860]: magicsock: updated disco key for peer [+wOUX] to d:a8abb11d6c11b481
+Nov 26 05:22:33 srv-domotica tailscaled[860]: magicsock: new contact: peer=[+wOUX] usec=515700130 cached=false via=derp
+Nov 26 05:22:34 srv-domotica tailscaled[860]: netcheck: DetectCaptivePortal(found=false)
+Nov 26 05:22:34 srv-domotica tailscaled[860]: magicsock: endpoints changed: 190.62.85.54:12164 (stun), 192.168.31.49:41641 (local)
+Nov 26 05:22:38 srv-domotica tailscaled[860]: magicsock: disco: node [+wOUX] d:a8abb11d6c11b481 now using 179.51.58.203:50092 mtu=1360 tx=ccfd9e21fe85
+Nov 26 05:22:38 srv-domotica tailscaled[860]: magicsock: new contact: peer=[+wOUX] usec=520809533 cached=false via=direct
+Nov 26 05:24:06 srv-domotica tailscaled[860]: magicsock: disco: node [+wOUX] d:a8abb11d6c11b481 now using 179.51.58.203:50092 mtu=1360 tx=d1538286e38c
+Nov 26 05:27:54 srv-domotica tailscaled[860]: netcheck: DetectCaptivePortal(found=false)
+Nov 26 05:33:13 srv-domotica tailscaled[860]: netcheck: DetectCaptivePortal(found=false)
+Nov 26 05:38:19 srv-domotica tailscaled[860]: netcheck: DetectCaptivePortal(found=false)
+Nov 26 05:43:23 srv-domotica tailscaled[860]: netcheck: DetectCaptivePortal(found=false)
+Nov 26 05:48:39 srv-domotica tailscaled[860]: netcheck: DetectCaptivePortal(found=false)

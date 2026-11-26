@@ -1,0 +1,47 @@
+== Sistema
+  Host: srv-domotica · IP: 192.168.31.49 · Ubuntu 24.04.5 LTS
+  RAM: 7.8Gi · CPU: 2
+  OK     Sin congelamientos del kernel en este arranque
+  OK     Salida a internet
+== Discos
+  OK     Montado / (196G)
+  OK     Montado /var (295G)
+  OK     Montado /datos (147G)
+  OK     Montado /backup (98G)
+== Servicios (activo / arranca solo)
+  OK     mosquitto (active, enabled)
+  OK     nodered (active, enabled)
+  OK     named (active, enabled)
+  OK     mongod (active, enabled)
+  OK     postgresql (active, enabled)
+  OK     grafana-server (active, enabled)
+  OK     nginx (active, enabled)
+  OK     ssh (active(socket), enabled(socket))
+== Puertos
+  OK     Escuchando en 22
+  OK     Escuchando en 53
+  OK     Escuchando en 80
+  OK     Escuchando en 1880
+  OK     Escuchando en 1883
+  OK     Escuchando en 3000
+== DNS (bind9)
+  OK     dashboard.domotica.local → 192.168.31.49
+  OK     Resuelve nombres de internet
+== MongoDB
+  OK     bindIp: 127.0.0.1
+  OK     Responde a ping
+== PostgreSQL
+  OK     Base domotica y tabla usuarios
+== Web
+  OK     Node-RED responde (200)
+  OK     nginx → domotica.local (200)
+  OK     Grafana sano
+== MQTT
+  OK     Sin acceso anónimo
+  OK     Rechaza conexión sin usuario
+  Usuarios MQTT: esp32 nodered 
+  AVISO  Puente MQTT aún no configurado (tarea de Fase 4)
+== Red persistente
+  OK     cloud-init no reescribe netplan
+
+Todo en orden.
