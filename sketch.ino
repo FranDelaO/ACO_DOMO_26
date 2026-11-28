@@ -1,4 +1,4 @@
-/*
+/* VERSION  2.0 YA CON LA CONECCION a LA VM MQTT _ Credendiales .... 
  * ============================================================================
  * Universidad Don Bosco - Arquitectura de Computadoras (ACO941) - Grupo 3
  * Sistema Domótico ESP32 para Simulación en Wokwi
