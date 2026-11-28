@@ -1,0 +1,18 @@
+# Wokwi Library List
+# See https://docs.wokwi.com/guides/libraries
+
+DHT sensor library
+
+Adafruit Unified Sensor
+
+PubSubClient
+
+ArduinoJson
+
+Keypad
+
+ESP32Servo
+
+Adafruit NeoPixel
+
+LiquidCrystal I2C
